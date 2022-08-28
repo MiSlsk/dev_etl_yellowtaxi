@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# add source roots to PYTHONPATH so that the scripts can see ./shared modules
+# add source roots to PYTHONPATH
 export PYTHONPATH="${PYTHONPATH}:$(pwd)/.."
 
 python3 scripts/partitioner.py

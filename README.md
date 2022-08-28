@@ -1,9 +1,10 @@
 ## dev_etl_yellowtaxi
 ### testing tools &amp; dev environment
-
+---------------------------------------
 
 
 Project root: ./dev_etl_yellowtaxi
+---------------------------------------
 
 ### Start the PostgreSQL database and create tables by running docker compose at the project root:
 
@@ -30,13 +31,15 @@ Run the script:
 ```
 docker exec -it <CONTAINER> psql -U <DB_USER> -d <DB_NAME> -f /tmp/file.sql
 ```
+---------------------------------------
 
 ### Create Environment variables and download the dataset to localhost:
 
 ```
 bash ./scripts/init_env.sh
 ```
-      
+---------------------------------------
+
 ### Create Python project virtual environment and load dependencies.
 
 Create virtual environment:
@@ -62,12 +65,14 @@ Deactivate virtual environment:
 ```
 deactivate
 ```
+---------------------------------------
 
 ### Partition downloaded dataset:
 ```
 bash ./scripts/partition.sh
 ```
-      
+---------------------------------------
+   
 ### Load partitioned data into the database and get some data quality observations
 ```
 python3 ./scripts/etl_dimensions.py
@@ -75,9 +80,9 @@ python3 ./scripts/etl_dimensions.py
 ```
 python3 ./scripts/etl_facts.py
 ```
+---------------------------------------
 
-
-# General info
+### General info
 
 Source schema:
 
@@ -107,3 +112,4 @@ root
 Output schema:
 
 ![Schema](/var/yellowtaxi_erd.JPG)
+---------------------------------------
